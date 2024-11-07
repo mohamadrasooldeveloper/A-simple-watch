@@ -8,19 +8,9 @@ const secondElem = $.getElementById('seconds')
 setInterval(function () {
     let myDate = new Date()
 
-    let nowHour = myDate.getHours()
-    let nowMinute = myDate.getMinutes()
-    let nowSecond = myDate.getSeconds()
-
-    if (nowHour < 10) {
-        nowHour = '0' + nowHour
-    }
-    if (nowMinute < 10) {
-        nowMinute = '0' + nowMinute
-    }
-    if (nowSecond < 10) {
-        nowSecond = '0' + nowSecond
-    }
+    let nowHour = String(myDate.getHours()).padStart(2 , '0')
+    let nowMinute = String(myDate.getMinutes()).padStart(2 , '0')
+    let nowSecond = String(myDate.getSeconds()).padStart(2 , '0')
 
     hourElem.innerHTML = nowHour;
     minuteElem.innerHTML = nowMinute;
